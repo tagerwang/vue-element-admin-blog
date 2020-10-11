@@ -130,6 +130,37 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/article',
+    component: Layout,
+    redirect: '/article/list',
+    name: 'Article',
+    meta: {
+      title: 'Blog Article',
+      icon: 'el-icon-s-help'
+    },
+    children: [
+      {
+        path: 'create',
+        component: () => import('@/views/article/create'),
+        name: 'CreateArticle',
+        meta: { title: 'Create Article', icon: 'edit' }
+      },
+      {
+        path: 'edit/:id', // 'edit/:id(\\d+)'
+        component: () => import('@/views/article/edit'),
+        name: 'EditArticle',
+        meta: { title: 'Edit Article', noCache: true, activeMenu: '/article/list' },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/article/list'),
+        name: 'ArticleList',
+        meta: { title: 'Article List', icon: 'list' }
+      }
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',
@@ -221,7 +252,6 @@ export const asyncRoutes = [
       }
     ]
   },
-
   {
     path: '/tab',
     component: Layout,

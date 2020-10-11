@@ -8,11 +8,35 @@ export function fetchList(query) {
   })
 }
 
+export function fetchDeleteArticle(data) {
+  return request({
+    url: '/admin/delete',
+    method: 'post',
+    data,
+    baseURL: 'http://localhost:3000'
+  })
+}
+export function fetchEditArticle(data) {
+  return request({
+    url: '/admin/edit',
+    method: 'post',
+    data,
+    baseURL: 'http://localhost:3000'
+  })
+}
+export function createArticle(data) {
+  return request({
+    url: '/admin/create',
+    method: 'post',
+    data,
+    baseURL: 'http://localhost:3000'
+  })
+}
 export function fetchArticle(id) {
   return request({
-    url: '/vue-element-admin/article/detail',
+    url: `/admin/detail/${id}`,
     method: 'get',
-    params: { id }
+    baseURL: 'http://localhost:3000'
   })
 }
 
@@ -24,13 +48,13 @@ export function fetchPv(pv) {
   })
 }
 
-export function createArticle(data) {
-  return request({
-    url: '/vue-element-admin/article/create',
-    method: 'post',
-    data
-  })
-}
+// export function createArticle(data) {
+//   return request({
+//     url: '/vue-element-admin/article/create',
+//     method: 'post',
+//     data
+//   })
+// }
 
 export function updateArticle(data) {
   return request({

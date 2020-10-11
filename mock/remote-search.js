@@ -9,6 +9,7 @@ for (let i = 0; i < count; i++) {
   }))
 }
 NameList.push({ name: 'mock-Pan' })
+NameList.push({ name: 'tager' })
 
 module.exports = [
   // username search
