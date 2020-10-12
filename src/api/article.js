@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-
+const baseURL = 'http://wtaog.com:8085'
 export function fetchList(query) {
   return request({
     url: '/vue-element-admin/article/list',
@@ -13,7 +13,7 @@ export function fetchDeleteArticle(data) {
     url: '/admin/delete',
     method: 'post',
     data,
-    baseURL: 'http://localhost:3000'
+    baseURL
   })
 }
 export function fetchEditArticle(data) {
@@ -21,7 +21,7 @@ export function fetchEditArticle(data) {
     url: '/admin/edit',
     method: 'post',
     data,
-    baseURL: 'http://localhost:3000'
+    baseURL
   })
 }
 export function createArticle(data) {
@@ -29,14 +29,14 @@ export function createArticle(data) {
     url: '/admin/create',
     method: 'post',
     data,
-    baseURL: 'http://localhost:3000'
+    baseURL
   })
 }
 export function fetchArticle(id) {
   return request({
     url: `/admin/detail/${id}`,
     method: 'get',
-    baseURL: 'http://localhost:3000'
+    baseURL
   })
 }
 
